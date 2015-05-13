@@ -8,7 +8,7 @@ This Arduino sketch moves the googly eyes to a position received over the Arduin
 
 mt <x> <y> <cr|lf>
 
-where x is the position in steps (decimal) to move the left eyeball and y is the position in steps (decimal) to move the right eyeball. Negative numbers are CW from 0 (look left); positive numbers are CCW from 0 (look right).
+where x is the position in steps (decimal) to move the left eyeball and y is the position in steps (decimal) to move the right eyeball. Negative numbers are CW from 0 (look left); positive numbers are CCW from 0 (look right). These positions are absolute positions.
 
 mt -800 -800 would make both eyes look left.
 mt 800 800 would make both eyes look right.
