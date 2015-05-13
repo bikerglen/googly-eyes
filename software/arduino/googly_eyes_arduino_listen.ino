@@ -2,10 +2,10 @@
 #include <AccelStepper.h>
 
 // motor speed in steps per second
-#define motorSpeed 2400
+#define motorSpeed 6400
 
 // motor acceleration in steps per second per second
-#define motorAccel 32000
+#define motorAccel 9600
 
 // left eyeball step and direction pins
 #define xstep 2
