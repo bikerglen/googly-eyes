@@ -42,6 +42,7 @@ if __name__ == '__main__':
 
     ser = serial.Serial (serial_dev, 19200)
 
+    x = 0
     while True:
         ret, img = cam.read()
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -70,14 +71,16 @@ if __name__ == '__main__':
             cv2.rectangle(vis, (mx1, my1), (mx2, my2), (0, 0, 255), 2)
             x = (x1 + x2) / 2;
             x = -1 * (x - 640) * 800 / 640;
-            print x
             ser.write ('mt {0:d} {0:d}\r'.format(x,x))
-            print ('mt {0:d} {0:d}\r'.format(x,x))
+            # print x
+            # print ('mt {0:d} {0:d}\r'.format(x,x))
 
         ser.flushInput ();
         dt = clock() - t
+	# vis = np.fliplr (vis)
+        vis = cv2.flip (vis, 1)
         draw_str(vis, (20, 20), 'time: %.1f ms' % (dt*1000))
-	vis = np.fliplr (vis);
+        draw_str(vis, (20, 40), 'pos:  %4d' % (x))
 
         cv2.imshow('facedetect', vis)
 
