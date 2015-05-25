@@ -2,7 +2,7 @@
 #include <AccelStepper.h>
 
 // motor speed in steps per second
-#define motorSpeed 3200
+#define motorSpeed 6400
 
 // motor acceleration in steps per second per second
 #define motorAccel 9600
